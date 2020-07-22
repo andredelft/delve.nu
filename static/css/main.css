@@ -162,3 +162,15 @@ a:visited {
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 360px) {
+  pre {
+    font-size: 12px;
+  }
+  img.gravatar {
+    /* max-width: 100px; */
+    display: block;
+    float: none;
+    margin: 10px auto;
+  }
+}
