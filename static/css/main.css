@@ -1,0 +1,12 @@
+.preview {
+  display: flex;
+}
+
+.code-block {
+  min-width: 33%;
+  padding-left: 10px
+}
+
+.logo {
+  width: 10px;
+}
