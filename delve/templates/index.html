@@ -5,23 +5,49 @@
     <meta charset="utf-8">
     <title>André van Delft</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+    <link rel="stylesheet"
+          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://kit.fontawesome.com/45028f0bca.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <h1>André van Delft<!-- Mail, GitHub, LinkedIn --></h1>
-    <p>Web & Python developer, specialised in the field of <em>digital humanities</em>.</p>
-    <div class="work-item">
-      <h2>Developer of Brill's <a href="https://dh.brill.com"><em>Scholarly Editions</em></a></h2>
-      <div class="logo">
-        <img src="{% static 'images/brill-se.svg' %}" alt='Scholarly Editions logo'/>
+    <header>
+      <div class="container">
+        <h1>
+          André van Delft
+          <span class="icons">
+            <a href="mailto:andre@delve.nu"><i class="far fa-envelope"></i></a>
+            <a href="https://github.com/andredelft"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/andr%C3%A9-van-delft-642834182/"><i class="fab fa-linkedin"></i></a>
+          </span>
+        </h1>
+        <p class="header-text">Web & Python developer, specialised in the field of <em>digital humanities</em>.</p>
       </div>
-    </div>
-    <div class="work-item">
-      <h2>Maintainer of <a href="https://pypi.org/project/leidenmark"><code>LeidenMark</code></a><!-- GitHub --></h2>
-      <p>A Python Markdown extension for converting Leiden+ epigraphic text to TEI Epidoc.</p>
-      <div class="preview">
-        <div class="code-block pycon">
-          <pre><code>&lt;D=.r&lt;=
+    </header>
+
+      <div class="container">
+        <div class="work-item">
+          <div class="logo">
+            <a href="https://dh.brill.com">
+              <img src="{% static 'images/brill-se.svg' %}" alt='Scholarly Editions logo'/>
+            </a>
+          </div>
+          <h2>Developer of Brill's <a href="https://dh.brill.com"><em>Scholarly Editions</em></a></h2>
+        </div>
+
+        <div class="work-item">
+          <h2>
+            Maintainer of <a href="https://pypi.org/project/leidenmark"><code>LeidenMark</code></a>
+            <span class="icons">
+              <a href="https://github.com/andredelft/leidenmark"><i class="fab fa-github"></i></a>
+            <span>
+          </h2>
+          <p>A Python Markdown extension for converting Leiden+ epigraphic text to TEI Epidoc.</p>
+          <div class="preview">
+            <div class="code-block pycon">
+              <pre><code>&lt;D=.r&lt;=
 1. Lorem ipsum dolor
 vac.1lin
 2. sit amet, con[ca.3]c
@@ -32,9 +58,9 @@ lost.2lin
 6. ut labore et dol
 7.-ore magna aliqua
 =&gt;=D&gt;</code></pre>
-        </div>
-        <div class="code-block xml">
-          <pre><code>&lt;div n=&quot;r&quot; type=&quot;textpart&quot;&gt;
+            </div>
+            <div class="code-block">
+              <pre><code class="xml">&lt;div n=&quot;r&quot; type=&quot;textpart&quot;&gt;
   &lt;ab&gt;
     &lt;l n=&quot;1&quot;&gt;Lorem ipsum dolor&lt;/l&gt;
     &lt;space quantity=&quot;1&quot; unit=&quot;line&quot;/&gt;
@@ -49,15 +75,21 @@ lost.2lin
     &lt;l break=&quot;no&quot; n=&quot;7&quot;&gt;ore magna aliqua&lt;/l&gt;
   &lt;/ab&gt;
 &lt;/div&gt;</code></pre>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="work-item">
-      <h2>Maintainer of <a href="https://pypi.org/project/leidenmark"><code>dh-utils</code></a><!-- GitHub --></h2>
-      <p>A Python 3.6+ package containing various utilities relevant in the field of digital humanities.</p>
-      <div class="preview">
-        <div class="code-block pycon">
-          <pre><code>&gt;&gt;&gt; from dh_utils import unicode as u
+
+        <div class="work-item">
+          <h2>
+            Maintainer of <a href="https://pypi.org/project/dh-utils"><code>dh-utils</code></a>
+            <span class="icons">
+              <a href="https://github.com/andredelft/dh-utils"><i class="fab fa-github"></i></a>
+            <span>
+          </h2>
+          <p>A Python 3.6+ package containing various utilities relevant in the field of digital humanities.</p>
+          <div class="preview">
+            <div class="code-block large">
+              <pre><code class="python">&gt;&gt;&gt; from dh_utils import unicode as u
 &gt;&gt;&gt; u.decompose('λόγος')
 λ U+03bb GREEK SMALL LETTER LAMDA
 ο U+03bf GREEK SMALL LETTER OMICRON
@@ -65,13 +97,14 @@ lost.2lin
 γ U+03b3 GREEK SMALL LETTER GAMMA
 ο U+03bf GREEK SMALL LETTER OMICRON
 ς U+03c2 GREEK SMALL LETTER FINAL SIGMA</code></pre>
-        </div>
-        <div class="code-block pycon">
-          <pre><code>&gt;&gt;&gt; from dh_utils import tei as t
+            </div>
+            <div class="code-block large">
+              <pre><code>&gt;&gt;&gt; from dh_utils import tei as t
 &gt;&gt;&gt; t.tag_script('A line contaning the hebrew אגוז מלך inline', 'Hebr')
 'A line contaning the hebrew &lt;foreign xml:lang=&quot;he-Hebr&quot;&gt;אגוז מלך&lt;/foreign&gt; inline'</code></pre>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
   </body>
 </html>
