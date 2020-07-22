@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&6k@vc=#oq$pdti3xw4mgimi@==&!u!qg@7p^cc%*f6q$m+why'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 1)
+DEBUG = int(os.environ.get('DEBUG', 1))
 
 ALLOWED_HOSTS = ['delve.nu', 'localhost']
 

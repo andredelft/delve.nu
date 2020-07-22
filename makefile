@@ -5,5 +5,4 @@ build:
 	docker build -t $(IMAGE_TAG) .
 
 run:
-	touch $(ENV_FILE)
-	docker run -it --env DEBUG=0 -p $(HOST_PORT):8000 --detach $(IMAGE_TAG)
+	docker run --env DEBUG=0 -p $(HOST_PORT):8000 --detach $(IMAGE_TAG)
