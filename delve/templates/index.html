@@ -35,6 +35,7 @@
             </a>
           </div>
           <h2>Developer of Brill's <a href="https://dh.brill.com"><em>Scholarly Editions</em></a></h2>
+          <p>An online reading environment for several text editions published by Brill, including critical editions, facsimiles, translations, and commentaries</p>
         </div>
 
         <div class="work-item">
@@ -47,6 +48,7 @@
           <p>A Python Markdown extension for converting Leiden+ epigraphic text to TEI Epidoc.</p>
           <div class="preview">
             <div class="code-block pycon">
+              <h3>Leiden+</h3>
               <pre><code>&lt;D=.r&lt;=
 1. Lorem ipsum dolor
 vac.1lin
@@ -60,6 +62,7 @@ lost.2lin
 =&gt;=D&gt;</code></pre>
             </div>
             <div class="code-block">
+              <h3>XML</h3>
               <pre><code class="xml">&lt;div n=&quot;r&quot; type=&quot;textpart&quot;&gt;
   &lt;ab&gt;
     &lt;l n=&quot;1&quot;&gt;Lorem ipsum dolor&lt;/l&gt;
@@ -89,6 +92,7 @@ lost.2lin
           <p>A Python 3.6+ package containing various utilities relevant in the field of digital humanities.</p>
           <div class="preview">
             <div class="code-block large">
+              <h3>Decompose unicode strings</h3>
               <pre><code class="python">&gt;&gt;&gt; from dh_utils import unicode as u
 &gt;&gt;&gt; u.decompose('λόγος')
 λ U+03bb GREEK SMALL LETTER LAMDA
@@ -99,6 +103,7 @@ lost.2lin
 ς U+03c2 GREEK SMALL LETTER FINAL SIGMA</code></pre>
             </div>
             <div class="code-block large">
+              <h3>Tag languages based on scripts using TEI XML</h3>
               <pre><code>&gt;&gt;&gt; from dh_utils import tei as t
 &gt;&gt;&gt; t.tag_script('A line contaning the hebrew אגוז מלך inline', 'Hebr')
 'A line contaning the hebrew &lt;foreign xml:lang=&quot;he-Hebr&quot;&gt;אגוז מלך&lt;/foreign&gt; inline'</code></pre>

@@ -33,6 +33,13 @@ h2 {
   margin-bottom: 1rem;
 }
 
+h3 {
+  font-size: 1em;
+  color: #535d6c;
+  font-style: italic;
+  font-weight: normal;
+}
+
 p.header-text {
   text-align: center;
   font-size: 1.2em;
@@ -42,7 +49,6 @@ p.header-text {
 p {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  text-align: justify;
 }
 
 span.icons {
@@ -65,7 +71,7 @@ span.icons {
 .logo img {
   width: 100px;
   float: right;
-  margin: 3px 12px 3px 0px
+  margin: 0 1rem;
 }
 
 .preview {
@@ -74,21 +80,26 @@ span.icons {
 }
 
 .code-block {
-  min-width: 33%;
-  max-width: 66%;
+  min-width: calc(33% - 1em);
+  max-width: calc(66% - 1em);
+  margin: 0 0 1em 1em;
 }
 
 .code-block.large {
   min-width: 60%;
-  max-width: 80%;
+  max-width: 100%;
+}
+
+.code-block h3 {
+  border: solid 1px #d3d3d3;
+  padding: 0.2em 0.5em;
+  border-bottom: 0px;
 }
 
 pre {
   overflow-y: auto;
-  /* padding: 0.5rem 1rem; */
   font-size: 14px;
   border: solid 1px #d3d3d3;
-  margin: 10px;
 }
 
 pre code.hljs {
