@@ -3,6 +3,7 @@
   {% load static %}
   <head>
     <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
     <title>André van Delft</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
     <link rel="stylesheet"
@@ -16,14 +17,14 @@
     <header>
       <div class="container">
         <img class="gravatar" src="https://www.gravatar.com/avatar/7af42729826305534a3d41cff5ceb05c?size=800"/>
-        <h1>
-          André van Delft
-          <span class="icons">
+        <div class="title">
+          <h1>André van Delft</h1>
+          <div class="icons">
             <a href="mailto:andre@delve.nu"><i class="far fa-envelope"></i></a>
             <a href="https://github.com/andredelft"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/andr%C3%A9-van-delft-642834182/"><i class="fab fa-linkedin"></i></a>
-          </span>
-        </h1>
+          </div>
+        </div>
         <p class="header-text">Web & Python developer, specialized in the field of <em>digital humanities</em>.</p>
       </div>
     </header>

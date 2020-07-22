@@ -51,8 +51,19 @@ p {
   margin-bottom: 1rem;
 }
 
-span.icons {
-  margin-left: .6em;
+header .title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.icons {
+  margin-left: .5em;
+}
+
+header .icons {
+  text-align: center;
+  font-size: 2.5em;
 }
 
 img.gravatar {
@@ -65,8 +76,7 @@ img.gravatar {
 .container {
   width: 70vw;
   max-width: 800px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
 }
 
 .work-item {
@@ -77,7 +87,7 @@ img.gravatar {
 .logo img {
   width: 100px;
   float: right;
-  margin: 0 1rem;
+  margin: 0 0 0.5rem 1rem;
 }
 
 .preview {
@@ -129,4 +139,26 @@ a:visited {
 
 .icons a:hover {
   color: inherit;
+}
+
+@media only screen and (max-width: 950px) {
+  .code-block {
+    max-width: 100%;
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  header {
+    padding-top: 20px;
+  }
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .code-block {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
 }
