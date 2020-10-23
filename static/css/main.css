@@ -95,6 +95,11 @@ img.gravatar {
   display: flex;
 }
 
+.preview > a {
+  display: block;
+  margin: 0 auto;
+}
+
 .code-block {
   min-width: calc(33% - 1em);
   max-width: calc(66% - 1em);
