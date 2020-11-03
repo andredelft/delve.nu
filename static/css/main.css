@@ -84,6 +84,10 @@ img.gravatar {
   margin: 80px 0px;
 }
 
+.work-item:last-of-type {
+  margin-bottom: 160px;
+}
+
 .logo img {
   width: 100px;
   float: right;

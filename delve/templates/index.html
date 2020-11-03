@@ -9,8 +9,8 @@
     <link rel="stylesheet"
           href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/styles/default.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     <script src="https://kit.fontawesome.com/df6ec88038.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
   </head>
 
   <body>
@@ -125,6 +125,19 @@ lost.2lin
         </div>
 
       </div>
+
+      <script>
+        hljs.initHighlightingOnLoad();
+
+        var slideUp = {
+            distance: '110%',
+            origin: 'bottom',
+            delay: 300,
+            duration: 500,
+        };
+
+        ScrollReveal().reveal('.work-item', slideUp);
+      </script>
 
   </body>
 </html>
