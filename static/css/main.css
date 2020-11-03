@@ -49,6 +49,7 @@ p.header-text {
 p {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-size: 1.1em;
 }
 
 header .title {
@@ -80,8 +81,7 @@ img.gravatar {
 }
 
 .work-item {
-  margin: 40px 0px;
-  /* padding-bottom: 40px; */
+  margin: 80px 0px;
 }
 
 .logo img {
