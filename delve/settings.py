@@ -25,7 +25,7 @@ except KeyError:
     else:
         raise RuntimeError("Missing SECRET_KEY environment variable")
 
-ALLOWED_HOSTS = ['delve.nu', 'localhost']
+ALLOWED_HOSTS = ['delve.nu', 'localhost', 'www.delve.nu']
 
 SESSION_COOKIE_SECURE = True
 
