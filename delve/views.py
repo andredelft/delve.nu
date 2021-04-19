@@ -19,7 +19,7 @@ PORTFOLIO_ITEMS = [
         'label': 'Natuurkundige Commissie Archives Online',
         'href': 'https://dh.brill.com/nco',
         'dark_mode': True,
-        'no_slides': 2,
+        'no_slides': 3,
     },
     {
         'name': 'levensfilosofie',
