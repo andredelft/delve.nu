@@ -36,12 +36,10 @@ def _get_slide_names(name, no_slides):
 
 
 def home(request):
-    portfolio_items = PORTFOLIO_ITEMS
     portfolio_items = [
         {**item, 'slides': _get_slide_names(item['name'], item['no_slides'])}
-        for item in portfolio_items
+        for item in PORTFOLIO_ITEMS
     ]
-    print(portfolio_items)
     return render(
         request, 'index.html', context={'portfolio_items': portfolio_items}
     )

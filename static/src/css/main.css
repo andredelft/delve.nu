@@ -158,6 +158,13 @@ a:visited {
   margin-bottom: 100px;
 }
 
+p.lead {
+  font-size: 20px;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 100px;
+}
+
 @media only screen and (max-width: 950px) {
   .code-block {
     max-width: 100%;
