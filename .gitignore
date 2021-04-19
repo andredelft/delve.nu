@@ -1,5 +1,6 @@
 __pycache__/
 static/dist/
+static/src/images/originals
 *.sqlite3
 venv/
 .env

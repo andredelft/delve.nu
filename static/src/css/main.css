@@ -26,11 +26,13 @@ header {
 h1 {
   font-size: 2.5rem;
   text-align: center;
+  font-weight: bold;
 }
 
 h2 {
   margin-top: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 h3 {
@@ -52,14 +54,15 @@ p {
   font-size: 1.1em;
 }
 
-header .title {
+.icons {
+  margin: auto;
+  max-width: 200px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.icons {
-  margin-left: .5em;
+.icons a {
+  display: block;
 }
 
 header .icons {
@@ -134,6 +137,7 @@ pre code.hljs {
 a {
   color: #535d6c;
   text-decoration: none;
+  font-style: italic;
 }
 
 a:hover {
@@ -148,6 +152,10 @@ a:visited {
 
 .icons a:hover {
   color: inherit;
+}
+
+.portfolio-item {
+  margin-bottom: 100px;
 }
 
 @media only screen and (max-width: 950px) {

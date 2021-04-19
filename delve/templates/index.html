@@ -5,11 +5,10 @@
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
     <title>André van Delft</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
-    <link rel="stylesheet"
-          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/styles/default.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
     <script src="https://kit.fontawesome.com/df6ec88038.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
   </head>
 
@@ -21,108 +20,48 @@
           <h1>André van Delft, MSc MA</h1>
           <div class="icons">
             <a href="mailto:andre@delve.nu"><i class="far fa-envelope"></i></a>
+            <a href="https://gitlab.com/andredelft"><i class="fab fa-gitlab"></i></a>
             <a href="https://github.com/andredelft"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/andre-van-delft/"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
-        <p class="header-text">Web & Python developer, specialized in the field of <em>digital humanities</em>.</p>
+        <p class="header-text"><i>Web & Python developer</i></p>
       </div>
     </header>
 
-      <div class="container">
-
-        <div class="work-item">
-          <h2>Creator of <a href="https://github.com/andredelft/flock-learning"><code>flock-learning</code> <i class="fab fa-github"></i></a></h2>
-          <p>A Python multi-agent reinforcement learning model exploring collective motion with orientation-based rewards (MSc research project).</p>
-          <div class="preview">
-            <a href="https://github.com/andredelft/flock-learning">
-              <img src="https://raw.githubusercontent.com/andredelft/flock-learning/master/20200614-102301.gif" alt='Flock learning preview' width="500"/>
-            </a>
+      <div class="container mt-5">
+        <h1>Portfolio</h1>
+        <p style="font-size: 20px; text-align: center; font-style: italic; margin-bottom: 100px;">The slideshows below showcase some of my recent work. Click the images to visit the corresponding website.</p>
+        {% for item in portfolio_items %}
+        <div class="portfolio-item">
+          <h2 class="pi-header"><a href="{{ item.href }}" target="_blank">{{ item.label }}</a></h2>
+          <div id="carousel_{{ item.name }}" class="carousel {% if item.dark_mode %}carousel-dark {% endif %}slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              {% for slide in item.slides %}
+              <button type="button" data-bs-target="#carousel_{{ item.name }}" data-bs-slide-to="{{ forloop.counter0 }}"
+                {% if forloop.first %}class="active" aria-current="true" {% endif %}aria-label="Slide {{ forloop.counter }}"></button>
+              {% endfor %}
+            </div>
+            <div class="carousel-inner">
+              {% for slide in item.slides %}
+              <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                <a href="{{ item.href }}" target="_blank"><img src="{% static slide %}" class="d-block w-100"></a>
+              </div>
+              {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_{{ item.name }}" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel_{{ item.name }}" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
+        {% endfor %}
 
-        <div class="work-item slide-up">
-          <div class="logo">
-            <a href="https://dh.brill.com">
-              <img src="{% static 'images/brill-se.svg' %}" alt='Scholarly Editions logo'/>
-            </a>
-          </div>
-          <h2>Developer for Brill's <a href="https://dh.brill.com"><em>Scholarly Editions</em></a></h2>
-          <p>An online reading environment for several text editions published by Brill, including critical editions, facsimiles, translations and commentaries.</p>
-        </div>
 
-        <div class="work-item slide-up">
-          <h2>
-            Maintainer of <a href="https://pypi.org/project/leidenmark"><code>LeidenMark</code></a>
-            <span class="icons">
-              <a href="https://github.com/andredelft/leidenmark"><i class="fab fa-github"></i></a>
-            </span>
-          </h2>
-          <p>A Python Markdown extension for converting <a href="http://papyri.info/docs/leiden_plus">Leiden+</a> epigraphic text to <a href="https://epidoc.stoa.org/gl/latest/">TEI Epidoc</a>.</p>
-          <div class="preview">
-            <div class="code-block pycon">
-              <h3>Leiden+</h3>
-              <pre><code>&lt;D=.r&lt;=
-1. Lorem ipsum dolor
-vac.1lin
-2. sit amet, con[ca.3]c
-3.-etur adipiscing
-=&gt;=D&gt;
-&lt;D=.v&lt;=
-lost.2lin
-6. ut labore et dol
-7.-ore magna aliqua
-=&gt;=D&gt;</code></pre>
-            </div>
-            <div class="code-block">
-              <h3>XML</h3>
-              <pre><code class="xml">&lt;div n=&quot;r&quot; type=&quot;textpart&quot;&gt;
-  &lt;ab&gt;
-    &lt;l n=&quot;1&quot;&gt;Lorem ipsum dolor&lt;/l&gt;
-    &lt;space quantity=&quot;1&quot; unit=&quot;line&quot;/&gt;
-    &lt;l n=&quot;2&quot;&gt;sit amet, con&lt;gap precision=&quot;low&quot; quantity=&quot;3&quot; unit=&quot;character&quot;/&gt;c&lt;/l&gt;
-    &lt;l break=&quot;no&quot; n=&quot;3&quot;&gt;etur adipiscing&lt;/l&gt;
-  &lt;/ab&gt;
-&lt;/div&gt;
-&lt;div n=&quot;v&quot; type=&quot;textpart&quot;&gt;
-  &lt;ab&gt;
-    &lt;gap quantity=&quot;2&quot; unit=&quot;line&quot;/&gt;
-    &lt;l n=&quot;6&quot;&gt;ut labore et dol&lt;/l&gt;
-    &lt;l break=&quot;no&quot; n=&quot;7&quot;&gt;ore magna aliqua&lt;/l&gt;
-  &lt;/ab&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-item slide-up">
-          <h2>
-            Maintainer of <a href="https://pypi.org/project/dh-utils"><code>dh-utils</code></a>
-            <span class="icons">
-              <a href="https://github.com/andredelft/dh-utils"><i class="fab fa-github"></i></a>
-            </span>
-          </h2>
-          <p>A Python package containing various utilities relevant in the field of digital humanities.</p>
-          <div class="preview">
-            <div class="code-block large">
-              <h3>Decompose unicode strings</h3>
-              <pre><code class="python">&gt;&gt;&gt; from dh_utils import unicode as u
-&gt;&gt;&gt; u.decompose('λόγος')
-λ U+03bb GREEK SMALL LETTER LAMDA
-ο U+03bf GREEK SMALL LETTER OMICRON
-́ U+0301 COMBINING ACUTE ACCENT
-γ U+03b3 GREEK SMALL LETTER GAMMA
-ο U+03bf GREEK SMALL LETTER OMICRON
-ς U+03c2 GREEK SMALL LETTER FINAL SIGMA</code></pre>
-            </div>
-            <div class="code-block large">
-              <h3>Tag languages based on scripts using TEI XML</h3>
-              <pre><code>&gt;&gt;&gt; from dh_utils import tei as t
-&gt;&gt;&gt; t.tag_script('A line contaning the hebrew אגוז מלך inline', 'Hebr')
-'A line contaning the hebrew &lt;foreign xml:lang=&quot;he-Hebr&quot;&gt;אגוז מלך&lt;/foreign&gt; inline'</code></pre>
-            </div>
-          </div>
-        </div>
 
       </div>
 
