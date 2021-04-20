@@ -6,7 +6,7 @@ PORTFOLIO_ITEMS = [
         'label': 'Brill\'s Scholarly Editions',
         'href': 'https://dh.brill.com/scholarlyeditions',
         'dark_mode': True,
-        'no_slides': 3,
+        'no_slides': 4,
     },
     {
         'name': 'vincent_jacob',
@@ -32,7 +32,7 @@ PORTFOLIO_ITEMS = [
 
 
 def _get_slide_names(name, no_slides):
-    return [f'images/{name}_{i + 1}.png' for i in range(no_slides)]
+    return [f'images/{name}_{i + 1}.jpg' for i in range(no_slides)]
 
 
 def home(request):
